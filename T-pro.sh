@@ -12,8 +12,26 @@ echo
 echo
 
 echo
+
+: << 'COMMENT'
+install - installs a package
+nano - the package
+-y - automatically answer yes
+-qq - very quiet output
+COMMENT
+
+: << 'COMMENT1'
+Notes:
+- Flag order doesn't matter: -yqq, -qqy, or -qy -y all work.
+- Error will still be shown (good for debugging).
+- For fully silent intalls, people redirect output, but that's usually not recommended.
+  Eg.
+      apt-get install nano -yqq > /dev/null 2>&1
+COMMENT1
+
+
 # Installing sl to check termux is properly installed or not
-apt-get install sl
+apt-get install sl -yqq
 
 
 # Checking termux 
@@ -25,17 +43,17 @@ clear
 apt-get update -y
 
 # Updating the packages
-apt-get upgrade -y
+apt-get upgrade -yqq
 
 # Installing python if not installed; if install null
-apt-get install python -y
-apt-get install python2 -y
+apt-get install python -yqq
+apt-get install python2 -yqq
 
 # unpacking figlet
-apt-get install figlet -y
+apt-get install figlet -yqq
 
 # Installing ruby
-apt-get install ruby -y
+apt-get install ruby -yqq
 
 # Install gem ruby
 gem install ruby 
@@ -44,25 +62,25 @@ gem install ruby
 pip install lolcat
 
 # Installing lolcat with gems
-gem install lolcat -y
+gem install lolcat -yqq
 
 # Unpacking toilet
-apt-get install toilet -y
+apt-get install toilet -yqq
 
 # Now installing ncurses-utils
-pkg install ncurses-utils -y
+pkg install ncurses-utils -yqq
 
 # Install cowsay in termux if not installed 
-apt-get install cowsay -y
+apt-get install cowsay -yqq
 
 # Installing cmatrix
-pkg install cmatrix
+pkg install cmatrix -yqq
 
 # Installing screenfetch
-pkg install screenfetch
+pkg install screenfetch -yqq
 
 # Installing nano editor
-apt-get install nano -yq --silent
+apt-get install nano -yqq 
 
 # T-pro banner
 # Spinner
